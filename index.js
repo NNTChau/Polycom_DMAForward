@@ -9,8 +9,7 @@
 // This started as code I grabbed from this SO question: http://stackoverflow.com/a/13472952/670023
 
 var url = require('url')
-  , http = require('http')
-  , https = require('https');
+  , http = require('http');
 
 var PORT = process.argv[2] || 9100;
 
@@ -27,7 +26,7 @@ var server = http.createServer(function(req, res) {
 
   options.headers['host'] = options.host;
 
-  var connector = (options.protocol == 'https:' ? https : http).request(options, function(serverResponse) {
+  var connector = (http).request(options, function(serverResponse) {
     console.log('<== Received res for', serverResponse.statusCode, reqUrl);
     console.log('\t-> Request Headers: ', options);
     console.log(' ');
