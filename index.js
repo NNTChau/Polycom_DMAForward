@@ -15,8 +15,8 @@ var url = require('url')
 var PORT = process.argv[2] || 9100;
 
 var server = http.createServer(function(req, res) {
-  var reqUrl = req.url.substr(1);
-  console.log('==> Making req for' + reqUrl + '\n');
+  var reqUrl = "http://172.30.21.10:443" + "/" + req.url.substr(1);
+  console.log('==> Making req for ' + reqUrl + '\n');
 
   req.pause();
 
