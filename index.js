@@ -1,3 +1,4 @@
+const Forwarder = require('forwarder-http')
 const server = new Forwarder({
   // The servers to forward the request to
   targets: [
